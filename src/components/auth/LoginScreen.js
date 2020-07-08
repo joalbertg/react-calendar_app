@@ -4,73 +4,73 @@ import './login.css';
 
 const LoginScreen = () => {
   return (
-    <div className="container login-container">
-      <div className="row">
-        <div className="col-md-6 login-form-1">
+    <div className='container login-container'>
+      <div className='row'>
+        <div className='col-md-6 login-form-1'>
           <h3>Ingreso</h3>
           <form>
-            <div className="form-group">
+            <div className='form-group'>
               <input 
-                type="text"
-                className="form-control"
-                placeholder="Correo"
+                type='text'
+                className='form-control'
+                placeholder='Correo'
               />
             </div>
-            <div className="form-group">
+            <div className='form-group'>
               <input
-                type="password"
-                className="form-control"
-                placeholder="Contraseña"
+                type='password'
+                className='form-control'
+                placeholder='Contraseña'
               />
             </div>
-            <div className="form-group">
+            <div className='form-group'>
               <input 
-                type="submit"
-                className="btnSubmit"
-                value="Login" 
+                type='submit'
+                className='btnSubmit'
+                value='Login' 
               />
             </div>
           </form>
         </div>
 
-        <div className="col-md-6 login-form-2">
+        <div className='col-md-6 login-form-2'>
           <h3>Registro</h3>
           <form>
-              <div className="form-group">
+              <div className='form-group'>
                 <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Nombre"
+                  type='text'
+                  className='form-control'
+                  placeholder='Nombre'
                 />
               </div>
-              <div className="form-group">
+              <div className='form-group'>
                 <input
-                  type="email"
-                  className="form-control"
-                  placeholder="Correo"
+                  type='email'
+                  className='form-control'
+                  placeholder='Correo'
                 />
               </div>
-              <div className="form-group">
+              <div className='form-group'>
                 <input
-                  type="password"
-                  className="form-control"
-                  placeholder="Contraseña" 
-                />
-              </div>
-
-              <div className="form-group">
-                <input
-                  type="password"
-                  className="form-control"
-                  placeholder="Repita la contraseña" 
+                  type='password'
+                  className='form-control'
+                  placeholder='Contraseña' 
                 />
               </div>
 
-              <div className="form-group">
+              <div className='form-group'>
                 <input
-                  type="submit"
-                  className="btnSubmit"
-                  value="Crear cuenta"
+                  type='password'
+                  className='form-control'
+                  placeholder='Repita la contraseña' 
+                />
+              </div>
+
+              <div className='form-group'>
+                <input
+                  type='submit'
+                  className='btnSubmit'
+                  value='Crear cuenta'
                 />
               </div>
           </form>

@@ -1,11 +1,13 @@
 # Calendar App
 
 - [Bootstrap][bootstrap]
+- [Font Awesome CDN][font_awesome]
 
 - [React Router][react_router]
 
 
 [bootstrap]: https://getbootstrap.com/docs/4.5/getting-started/introduction
+[font_awesome]: https://cdnjs.com/libraries/font-awesome
 
 [react_router]: https://reacttraining.com/react-router/web/guides/quick-start
 
