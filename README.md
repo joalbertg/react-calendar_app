@@ -4,12 +4,13 @@
 - [Font Awesome CDN][font_awesome]
 
 - [React Router][react_router]
-
+- [Big Calendar][react_big_calendar]
 
 [bootstrap]: https://getbootstrap.com/docs/4.5/getting-started/introduction
 [font_awesome]: https://cdnjs.com/libraries/font-awesome
 
 [react_router]: https://reacttraining.com/react-router/web/guides/quick-start
+[react_big_calendar]: http://jquense.github.io/react-big-calendar/examples/index.html
 
 ### Project Structure
 
@@ -58,7 +59,7 @@ docker-compose run app yarn
 
 Without dependencies
 ```shell
-docker-compose run app yarn add react-router-dom
+docker-compose run app yarn add react-router-dom react-big-calendar moment
 docker-compose run app yarn add link-module-alias --dev
 ```
 
