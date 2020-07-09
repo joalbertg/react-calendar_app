@@ -2,6 +2,7 @@
 
 - [Bootstrap][bootstrap]
 - [Font Awesome CDN][font_awesome]
+- [Sweetalert 2][sweetalert2]
 
 - [React Router][react_router]
 - [Big Calendar][react_big_calendar]
@@ -9,6 +10,7 @@
 
 [bootstrap]: https://getbootstrap.com/docs/4.5/getting-started/introduction
 [font_awesome]: https://cdnjs.com/libraries/font-awesome
+[sweetalert2]: https://sweetalert2.github.io/
 
 [react_router]: https://reacttraining.com/react-router/web/guides/quick-start
 [react_big_calendar]: http://jquense.github.io/react-big-calendar/examples/index.html
@@ -68,7 +70,7 @@ docker-compose run app yarn
 Without dependencies
 ```shell
 docker-compose run app yarn add react-router-dom react-big-calendar moment react-modal
-docker-compose run app yarn add react-datetime-picker
+docker-compose run app yarn add react-datetime-picker sweetalert2
 docker-compose run app yarn add link-module-alias --dev
 ```
 
