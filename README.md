@@ -65,7 +65,7 @@ docker-compose run app yarn
 
 Without dependencies
 ```shell
-docker-compose run app yarn add react-router-dom react-big-calendar moment
+docker-compose run app yarn add react-router-dom react-big-calendar moment react-modal
 docker-compose run app yarn add link-module-alias --dev
 ```
 
