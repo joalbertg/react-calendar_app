@@ -5,12 +5,14 @@
 
 - [React Router][react_router]
 - [Big Calendar][react_big_calendar]
+- [Datetime Picker][react_datetime_picker]
 
 [bootstrap]: https://getbootstrap.com/docs/4.5/getting-started/introduction
 [font_awesome]: https://cdnjs.com/libraries/font-awesome
 
 [react_router]: https://reacttraining.com/react-router/web/guides/quick-start
 [react_big_calendar]: http://jquense.github.io/react-big-calendar/examples/index.html
+[react_datetime_picker]: https://projects.wojtekmaj.pl/react-datetime-picker/
 
 ### Project Structure
 
@@ -66,6 +68,7 @@ docker-compose run app yarn
 Without dependencies
 ```shell
 docker-compose run app yarn add react-router-dom react-big-calendar moment react-modal
+docker-compose run app yarn add react-datetime-picker
 docker-compose run app yarn add link-module-alias --dev
 ```
 
