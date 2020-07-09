@@ -7,6 +7,11 @@
 - [React Router][react_router]
 - [Big Calendar][react_big_calendar]
 - [Datetime Picker][react_datetime_picker]
+- [Moment][momentjs]
+
+- [Redux][reduxjs]
+- [React Redux][react_redux]
+- [Redux devtools][redux_devtools]
 
 [bootstrap]: https://getbootstrap.com/docs/4.5/getting-started/introduction
 [font_awesome]: https://cdnjs.com/libraries/font-awesome
@@ -15,12 +20,16 @@
 [react_router]: https://reacttraining.com/react-router/web/guides/quick-start
 [react_big_calendar]: http://jquense.github.io/react-big-calendar/examples/index.html
 [react_datetime_picker]: https://projects.wojtekmaj.pl/react-datetime-picker/
+[momentjs]: https://momentjs.com/
+
+[reduxjs]: https://es.redux.js.org/
+[react_redux]: https://react-redux.js.org/
+[redux_devtools]: https://github.com/zalmoxisus/redux-devtools-extension#usage
 
 ### Project Structure
 
 > run `tree -I "node_modules|public"`
 ```shell
-
 .
 ├── Dockerfile
 ├── README.md
@@ -36,6 +45,7 @@
 │   │   │   └── login.css
 │   │   ├── calendar
 │   │   │   ├── CalendarEvent.js
+│   │   │   ├── CalendarModal.js
 │   │   │   ├── CalendarScreen.js
 │   │   │   └── index.js
 │   │   └── ui
@@ -45,6 +55,9 @@
 │   ├── hooks
 │   ├── index.js
 │   ├── reducers
+│   │   ├── index.js
+│   │   ├── rootReducers.js
+│   │   └── uiReducer.js
 │   ├── routers
 │   │   ├── AppRouter.js
 │   │   ├── PrivateRoute.js
@@ -52,12 +65,15 @@
 │   │   └── index.js
 │   ├── setupTests.js
 │   ├── store
+│   │   ├── index.js
+│   │   └── store.js
 │   ├── styles.css
 │   └── types
+│       ├── index.js
+│       └── types.js
 └── yarn.lock
 
-12 directories, 21 files
-
+12 directories, 29 files
 ```
 
 ### Installs
@@ -69,8 +85,9 @@ docker-compose run app yarn
 
 Without dependencies
 ```shell
-docker-compose run app yarn add react-router-dom react-big-calendar moment react-modal
-docker-compose run app yarn add react-datetime-picker sweetalert2
+docker-compose run app yarn add react-router-dom react-big-calendar moment
+docker-compose run app yarn add react-datetime-picker react-modal sweetalert2
+docker-compose run app yarn add react-datetime-picker react-redux redux redux-thunk
 docker-compose run app yarn add link-module-alias --dev
 ```
 
