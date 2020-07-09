@@ -16,6 +16,7 @@
 
 > run `tree -I "node_modules|public"`
 ```shell
+
 .
 ├── Dockerfile
 ├── README.md
@@ -30,10 +31,13 @@
 │   │   │   ├── index.js
 │   │   │   └── login.css
 │   │   ├── calendar
+│   │   │   ├── CalendarEvent.js
 │   │   │   ├── CalendarScreen.js
 │   │   │   └── index.js
 │   │   └── ui
+│   │       └── Navbar.js
 │   ├── helpers
+│   │   └── calendar-messages-es.js
 │   ├── hooks
 │   ├── index.js
 │   ├── reducers
@@ -44,10 +48,12 @@
 │   │   └── index.js
 │   ├── setupTests.js
 │   ├── store
+│   ├── styles.css
 │   └── types
 └── yarn.lock
 
-12 directories, 17 files
+12 directories, 21 files
+
 ```
 
 ### Installs
