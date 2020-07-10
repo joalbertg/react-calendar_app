@@ -53,6 +53,7 @@
 │   │   │   └── index.js
 │   │   └── ui
 │   │       ├── AddNewFab.js
+│   │       ├── DeleteEventFab.js
 │   │       ├── Navbar.js
 │   │       └── index.js
 │   ├── helpers
@@ -79,7 +80,7 @@
 │       └── types.js
 └── yarn.lock
 
-12 directories, 35 files
+12 directories, 36 files
 ```
 
 ### Installs

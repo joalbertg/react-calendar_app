@@ -11,12 +11,14 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 import {
   Navbar,
-  AddNewFab
+  AddNewFab,
+  DeleteEventFab
 } from '~components/ui';
 import { messages } from '~helpers/calendar-messages-es';
 import {
   uiOpenModal,
-  eventSetActive
+  eventSetActive,
+  eventClearActiveEvent
 } from '~actions';
 
 import { CalendarEvent } from './CalendarEvent';
@@ -30,6 +32,7 @@ const localizer = momentLocalizer(moment) // or globalizeLocalizer
 
 const CalendarScreen = () => {
   const [lastView, setLastView] = useState(localStorage.getItem('lastView') || 'month');
+  const { activeEvent } = useSelector(state => state.calendar);
   const dispatch = useDispatch();
 
   let { events } = useSelector(state => state.calendar);
@@ -50,6 +53,14 @@ const CalendarScreen = () => {
     //console.log(event);
     setLastView(event);
     localStorage.setItem('lastView', event);
+  }
+
+  const onSelectSlot = event => {
+    // se puede crear al hacer click en el calendar
+    // un evento con un rango de fecha y hora definido
+    // por el lugar donde se hizo el click
+    // console.log(event);
+    dispatch(eventClearActiveEvent());
   }
 
   const eventStyleGetter = (event, start, end, isSelected) => {
@@ -80,11 +91,17 @@ const CalendarScreen = () => {
         onDoubleClickEvent={onDoubleClick}
         onSelectEvent={onSelectEvent}
         onView={onViewChange}
+        onSelectSlot={onSelectSlot}
+        selectable={true}
         view={lastView}
         components={{
           event: CalendarEvent
         }}
       />
+      {
+        activeEvent &&
+          <DeleteEventFab />
+      }
       <AddNewFab />
       <CalendarModal />
     </div>

@@ -54,6 +54,8 @@ export const CalendarModal = () => {
   useEffect(() => {
     if(activeEvent) {
       setFormValues(activeEvent);
+    } else {
+      setFormValues(initEvent);
     }
   }, [activeEvent]);
 
@@ -129,7 +131,7 @@ export const CalendarModal = () => {
       style={customStyles}
       closeTimeoutMS={200}
     >
-      <h1> Nuevo evento </h1>
+      <h1> { activeEvent ? 'Edit Event' : 'New event' } </h1>
       <hr />
       <form
         className='container'
