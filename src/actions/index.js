@@ -5,6 +5,7 @@ export {
 
 export {
   eventAddNew,
-  eventSetActive
+  eventSetActive,
+  eventClearActiveEvent
 } from './events';
 

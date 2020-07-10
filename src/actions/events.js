@@ -10,3 +10,7 @@ export const eventSetActive = id => ({
   payload: { id }
 });
 
+export const eventClearActiveEvent = () => ({
+  type: types.EVENT_CLEAR_ACTIVE_EVENT
+});
+
