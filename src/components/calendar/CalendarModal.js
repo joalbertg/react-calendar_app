@@ -11,7 +11,8 @@ import {
 import {
   uiCloseModal,
   eventAddNew,
-  eventClearActiveEvent
+  eventClearActiveEvent,
+  eventUpdated
 } from '~actions';
 
 const customStyles = {
@@ -101,14 +102,18 @@ export const CalendarModal = () => {
       return setTitleValid(false);
     }
 
-    dispatch(eventAddNew({
-      id: new Date().getTime(),
-      ...formValues,
-      user: {
-        _id: '123',
-        name: 'Jolabert'
-      }
-    }));
+    if(formValues.id) {
+      dispatch(eventUpdated(formValues));
+    } else {
+      dispatch(eventAddNew({
+        id: new Date().getTime(),
+        ...formValues,
+        user: {
+          _id: '123',
+          name: 'Jolabert'
+        }
+      }));
+    }
 
     setTitleValid(true);
     setFormValues(initEvent);
