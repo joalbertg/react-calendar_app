@@ -6,9 +6,15 @@ import { useDispatch } from 'react-redux';
 import 'moment/locale/es';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
-import { Navbar } from '~components/ui/Navbar';
+import {
+  Navbar,
+  AddNewFab
+} from '~components/ui';
 import { messages } from '~helpers/calendar-messages-es';
-import { uiOpenModal } from '~actions';
+import {
+  uiOpenModal,
+  eventSetActive
+} from '~actions';
 
 import { CalendarEvent } from './CalendarEvent';
 import { CalendarModal } from './CalendarModal';
@@ -19,10 +25,10 @@ moment.locale('es');
 // to the correct localizer.
 const localizer = momentLocalizer(moment) // or globalizeLocalizer
 const events = [{
+  id: 'ABCD1234',
   title: 'Random Birthday',
   start: moment().toDate(),
   end: moment().add(2, 'hours').toDate(),
-  bgcolor: '#fafafa',
   notes: 'buy the cake',
   user: {
     _id: '123',
@@ -38,7 +44,7 @@ const CalendarScreen = () => {
   }
 
   const onSelect = event => {
-    console.log(event);
+    dispatch(eventSetActive(event.id));
   }
 
   const onViewChange = event => {
@@ -80,6 +86,7 @@ const CalendarScreen = () => {
           event: CalendarEvent
         }}
       />
+      <AddNewFab />
       <CalendarModal />
     </div>
   );

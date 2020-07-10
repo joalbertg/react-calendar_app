@@ -38,6 +38,9 @@
 ├── src
 │   ├── CalendarApp.js
 │   ├── actions
+│   │   ├── events.js
+│   │   ├── index.js
+│   │   └── ui.js
 │   ├── components
 │   │   ├── auth
 │   │   │   ├── LoginScreen.js
@@ -49,12 +52,15 @@
 │   │   │   ├── CalendarScreen.js
 │   │   │   └── index.js
 │   │   └── ui
-│   │       └── Navbar.js
+│   │       ├── AddNewFab.js
+│   │       ├── Navbar.js
+│   │       └── index.js
 │   ├── helpers
 │   │   └── calendar-messages-es.js
 │   ├── hooks
 │   ├── index.js
 │   ├── reducers
+│   │   ├── calendarReducer.js
 │   │   ├── index.js
 │   │   ├── rootReducers.js
 │   │   └── uiReducer.js
@@ -73,7 +79,7 @@
 │       └── types.js
 └── yarn.lock
 
-12 directories, 29 files
+12 directories, 35 files
 ```
 
 ### Installs
