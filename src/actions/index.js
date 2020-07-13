@@ -1,10 +1,13 @@
 export {
-  startLogin
+  startLogin,
+  startRegister
 } from './auth';
 
 export {
   uiOpenModal,
-  uiCloseModal
+  uiCloseModal,
+  setError,
+  removeError
 } from './ui';
 
 export {

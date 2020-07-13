@@ -1,6 +1,8 @@
 export const types = {
   UI_OPEN_MODAL:            '[UI] OPEN_MODAL',
   UI_CLOSE_MODAL:           '[UI] CLOSE_MODAL',
+  UI_SET_ERROR:             '[UI] UI_SET_ERROR',
+  UI_REMOVE_ERROR:          '[UI] UI_REMOVE_ERROR',
 
   EVENT_SET_ACTIVE:         '[EVENT] SET_ACTIVE',
   EVENT_ADD_NEW:            '[EVENT] ADD_NEW',

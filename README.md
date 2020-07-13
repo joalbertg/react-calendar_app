@@ -104,7 +104,7 @@ docker-compose run app yarn
 
 Without dependencies
 ```shell
-docker-compose run app yarn add react-router-dom react-big-calendar moment
+docker-compose run app yarn add react-router-dom react-big-calendar moment validator
 docker-compose run app yarn add react-datetime-picker react-modal sweetalert2
 docker-compose run app yarn add react-datetime-picker react-redux redux redux-thunk
 docker-compose run app yarn add link-module-alias --dev
