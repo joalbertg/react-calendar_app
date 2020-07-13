@@ -10,7 +10,6 @@ export const types = {
   EVENT_UPDATED:            '[EVENT] UPDATED',
   EVENT_DELETED:            '[EVENT] DELETED',
 
-  AUTH_CHECKING:            '[AUTH] CHECKING',
   AUTH_CHECKING_FINISH:     '[AUTH] CHECKING_FINISH',
   AUTH_START_LOGIN:         '[AUTH] AUTH_START_LOGIN',
   AUTH_LOGIN:               '[AUTH] LOGIN',
