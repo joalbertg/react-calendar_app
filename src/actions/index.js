@@ -1,4 +1,8 @@
 export {
+  startLogin
+} from './auth';
+
+export {
   uiOpenModal,
   uiCloseModal
 } from './ui';

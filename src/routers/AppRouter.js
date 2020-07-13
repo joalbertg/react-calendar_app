@@ -12,8 +12,8 @@ import LoginScreen from '~components/auth';
 import CalendarScreen from '~components/calendar';
 
 const AppRouter = () => {
-  //const isLoggedIn = false;
-  const isLoggedIn = true;
+  const isLoggedIn = false;
+  //const isLoggedIn = true;
   return(
     <Router>
       <div>

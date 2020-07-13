@@ -35,9 +35,17 @@
 ├── README.md
 ├── docker-compose.yml
 ├── package.json
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
 ├── src
 │   ├── CalendarApp.js
 │   ├── actions
+│   │   ├── auth.js
 │   │   ├── events.js
 │   │   ├── index.js
 │   │   └── ui.js
@@ -57,10 +65,14 @@
 │   │       ├── Navbar.js
 │   │       └── index.js
 │   ├── helpers
-│   │   └── calendar-messages-es.js
+│   │   ├── calendar-messages-es.js
+│   │   └── fetch.js
 │   ├── hooks
+│   │   ├── index.js
+│   │   └── useForm.js
 │   ├── index.js
 │   ├── reducers
+│   │   ├── authReducer.js
 │   │   ├── calendarReducer.js
 │   │   ├── index.js
 │   │   ├── rootReducers.js
@@ -80,7 +92,7 @@
 │       └── types.js
 └── yarn.lock
 
-12 directories, 36 files
+13 directories, 47 files
 ```
 
 ### Installs
