@@ -4,7 +4,10 @@ import {
   Switch,
   Redirect
 } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import {
+  useDispatch,
+  useSelector
+} from 'react-redux';
 
 import { startSchecking } from '~actions';
 
@@ -16,25 +19,27 @@ import CalendarScreen from '~components/calendar';
 
 const AppRouter = () => {
   const dispatch = useDispatch();
-
-  //const isLoggedIn = false;
-  const isLoggedIn = true;
+  const { checking, uid } = useSelector(state => state.auth);
 
   useEffect(() => {
     dispatch(startSchecking());
   },[dispatch]);
+
+  if(checking) {
+    return <h5>wait...</h5>
+  }
 
   return(
     <Router>
       <div>
         <Switch>
           <PublicRoute
-            isLoggedIn={isLoggedIn}
+            isLoggedIn={!!uid}
             exact path='/auth/login'
             component={LoginScreen}
           />
           <PrivateRoute
-            isLoggedIn={isLoggedIn}
+            isLoggedIn={!!uid}
             exact path='/'
             component={CalendarScreen}
           />
