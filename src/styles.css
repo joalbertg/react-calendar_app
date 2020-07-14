@@ -7,6 +7,10 @@ html, body {
   width: 100vw;
 }
 
+.navbar-brand {
+  text-transform: Capitalize;
+}
+
 /* Big Calendar */
 
 .calendar-screen {
@@ -16,6 +20,10 @@ html, body {
 }
 
 .rbc-row.rbc-month-header .rbc-header, .rbc-toolbar-label, .rbc-agenda-date-cell {
+  text-transform: Capitalize;
+}
+
+.rbc-event-content span {
   text-transform: Capitalize;
 }
 
