@@ -21,7 +21,8 @@
     "sweetalert2": "^9.15.3",
     "typescript": ">=3.7.0-dev",
     "validator": "^13.1.1",
-    "websocket-extensions": "^0.1.4"
+    "websocket-extensions": "^0.1.4",
+    "link-module-alias": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -60,7 +61,6 @@
     ]
   },
   "devDependencies": {
-    "link-module-alias": "^1.2.0"
   },
   "engines": {
     "node": "14.0.0"
