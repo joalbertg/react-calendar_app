@@ -54,14 +54,13 @@ const eventLoaded = events => ({
 });
 
 export const eventStartLoading = () => {
-  return async (dispatch, getState) => {
+  return async (dispatch) => {
     try {
       const resp = await fetchWithToken('events');
       const body = await resp.json();
 
       if(body.ok) {
-        const { uid: _id, name } = getState().auth;
-        dispatch(eventLoaded(prepareEvents(body.events, { _id, name })));
+        dispatch(eventLoaded(prepareEvents(body.events)));
       } else {
         let msg = body.error.message ? body.error.message : body.error.reduce((acc, curr) => {
           return `${acc} ${curr.msg}`;
