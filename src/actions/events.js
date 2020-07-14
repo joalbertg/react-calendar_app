@@ -15,7 +15,7 @@ export const eventStartAddNew = event => {
 
       if(body.ok) {
         const { uid, name } = getState().auth;
-        dispatch(eventAddNew({ ...body.eventSave, user: { _id: uid, name } }));
+        dispatch(eventAddNew({ ...prepareEvent(body.eventSave), user: { _id: uid, name } }));
       } else {
         let msg = body.error.message ? body.error.message : body.error.reduce((acc, curr) => {
           return `${acc} ${curr.msg}`;

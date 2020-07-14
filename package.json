@@ -61,5 +61,8 @@
   },
   "devDependencies": {
     "link-module-alias": "^1.2.0"
+  },
+  "engines": {
+    "node": "14.0.0"
   }
 }
