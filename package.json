@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "link-module-alias": "^1.2.0",
     "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-big-calendar": "^0.26.0",
@@ -18,17 +19,18 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "serve": "^11.3.2",
     "sweetalert2": "^9.15.3",
     "typescript": ">=3.7.0-dev",
     "validator": "^13.1.1",
-    "websocket-extensions": "^0.1.4",
-    "link-module-alias": "^1.2.0"
+    "websocket-extensions": "^0.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "heroku-postbuild": "yarn build",
     "preinstall": "command -v link-module-alias && link-module-alias clean || true",
     "postinstall": "link-module-alias",
     "alias:build": "yarn preinstall && yarn postinstall"
@@ -60,9 +62,9 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "engines": {
-    "node": "14.0.0"
+    "node": "14.0.0",
+    "yarn": "1.17.3"
   }
 }
