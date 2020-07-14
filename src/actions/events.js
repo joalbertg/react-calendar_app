@@ -2,6 +2,7 @@ import Swal from 'sweetalert2';
 
 import types from '~types';
 import { fetchWithToken } from '~helpers/fetch';
+import { prepareEvents } from '~helpers/prepare-events';
 
 export const eventStartAddNew = event => {
   return async (dispatch, getState) => {
@@ -46,4 +47,31 @@ export const eventUpdated = event => ({
 export const eventDeleted = () => ({
   type: types.EVENT_DELETED
 });
+
+const eventLoaded = events => ({
+  type: types.EVENT_LOADED,
+  payload: events
+});
+
+export const eventStartLoading = () => {
+  return async (dispatch, getState) => {
+    try {
+      const resp = await fetchWithToken('events');
+      const body = await resp.json();
+
+      if(body.ok) {
+        const { uid: _id, name } = getState().auth;
+        dispatch(eventLoaded(prepareEvents(body.events, { _id, name })));
+      } else {
+        let msg = body.error.message ? body.error.message : body.error.reduce((acc, curr) => {
+          return `${acc} ${curr.msg}`;
+        },'');
+        Swal.fire('Error', msg, 'error');
+      }
+
+    } catch(error) {
+      Swal.fire('Error', error, 'error');
+    }
+  }
+}
 

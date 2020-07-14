@@ -17,6 +17,7 @@ export {
   eventSetActive,
   eventClearActiveEvent,
   eventUpdated,
-  eventDeleted
+  eventDeleted,
+  eventStartLoading
 } from './events';
 

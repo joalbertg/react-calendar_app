@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import {
@@ -18,7 +18,8 @@ import { messages } from '~helpers/calendar-messages-es';
 import {
   uiOpenModal,
   eventSetActive,
-  eventClearActiveEvent
+  eventClearActiveEvent,
+  eventStartLoading
 } from '~actions';
 
 import { CalendarEvent } from './CalendarEvent';
@@ -40,6 +41,10 @@ const CalendarScreen = () => {
   const keys = Object.keys(events);
 
   events = keys.map(key => events[key]);
+
+  useEffect(() => {
+    dispatch(eventStartLoading());
+  }, [dispatch]);
 
   const onDoubleClick = event => {
     dispatch(uiOpenModal());

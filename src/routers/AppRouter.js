@@ -10,12 +10,11 @@ import {
 } from 'react-redux';
 
 import { startSchecking } from '~actions';
+import LoginScreen from '~components/auth';
+import CalendarScreen from '~components/calendar';
 
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
-
-import LoginScreen from '~components/auth';
-import CalendarScreen from '~components/calendar';
 
 const AppRouter = () => {
   const dispatch = useDispatch();
