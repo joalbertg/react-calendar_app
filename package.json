@@ -7,7 +7,6 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "link-module-alias": "^1.2.0",
     "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-big-calendar": "^0.26.0",
@@ -26,6 +25,7 @@
     "websocket-extensions": "^0.1.4"
   },
   "scripts": {
+    "dev": "react-scripts start",
     "start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -62,9 +62,11 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "link-module-alias": "^1.2.0"
+  },
   "engines": {
     "node": "14.0.0",
-    "yarn": "1.17.3"
+    "yarn": "^1.17.3"
   }
 }

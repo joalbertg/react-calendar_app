@@ -26,6 +26,12 @@
 [react_redux]: https://react-redux.js.org/
 [redux_devtools]: https://github.com/zalmoxisus/redux-devtools-extension#usage
 
+### Backend repository
+
+- [Calendar API][calendar_api]
+
+[calendar_api]: https://github.com/joalbertg/express-calendar_app
+
 ### Project Structure
 
 > run `tree -I "node_modules|public"`
@@ -95,6 +101,56 @@
 13 directories, 47 files
 ```
 
+### Screenshots
+
+<p align="center">
+  <kbd>
+    <img src="screenshots/auth.png" title="auth"  width="800px" height="auto">
+  </kbd>
+</p>
+
+<p align="center">
+  <kbd>
+    <img src="screenshots/new-event.png" title="new event"  width="800px" height="auto">
+  </kbd>
+</p>
+
+<p align="center">
+  <kbd>
+    <img src="screenshots/event-selected.png" title="event selected"  width="800px" height="auto">
+  </kbd>
+</p>
+
+<p align="center">
+  <kbd>
+    <img src="screenshots/edit-event.png" title="edit event"  width="800px" height="auto">
+  </kbd>
+</p>
+
+<p align="center">
+  <kbd>
+    <img src="screenshots/month.png" title="month"  width="800px" height="auto">
+  </kbd>
+</p>
+
+<p align="center">
+  <kbd>
+    <img src="screenshots/day.png" title="day"  width="800px" height="auto">
+  </kbd>
+</p>
+
+<p align="center">
+  <kbd>
+    <img src="screenshots/week.png" title="week"  width="800px" height="auto">
+  </kbd>
+</p>
+
+<p align="center">
+  <kbd>
+    <img src="screenshots/schedule.png" title="schedule"  width="800px" height="auto">
+  </kbd>
+</p>
+
 ### Installs
 
 With `package.json` and dependencies
@@ -159,5 +215,26 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 );
+```
+
+### Deploy to Heroku platform
+
+> run `docker-compose run app yarn add serve`
+```json
+...
+"scripts": {
+  "dev": "react-scripts start",
+  "start": "serve -s build",
+  "build": "react-scripts build",
+  "test": "react-scripts test --env=jsdom",
+  "eject": "react-scripts eject",
+  "heroku-postbuild": "yarn build"
+},
+...
+"engines": {
+  "node": "14.0.0",
+  "yarn": "^1.17.3"
+}
+...
 ```
 
