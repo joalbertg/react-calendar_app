@@ -1,7 +1,8 @@
 export {
   startLogin,
   startRegister,
-  startSchecking
+  startSchecking,
+  startLogout
 } from './auth';
 
 export {
