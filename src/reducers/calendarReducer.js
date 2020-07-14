@@ -60,6 +60,8 @@ export const calendarReducer = (state = initialState, action) => {
           return acc;
         }, {})
       };
+    case types.EVENT_CLEAR:
+      return { ...initialState };
     default:
       return state;
   }
