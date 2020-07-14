@@ -13,7 +13,7 @@ export {
 } from './ui';
 
 export {
-  eventAddNew,
+  eventStartAddNew,
   eventSetActive,
   eventClearActiveEvent,
   eventUpdated,

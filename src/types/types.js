@@ -4,6 +4,8 @@ export const types = {
   UI_SET_ERROR:             '[UI] UI_SET_ERROR',
   UI_REMOVE_ERROR:          '[UI] UI_REMOVE_ERROR',
 
+
+  EVENT_START_ADD_NEW:      '[EVENT] START_ADD_NEW',
   EVENT_SET_ACTIVE:         '[EVENT] SET_ACTIVE',
   EVENT_ADD_NEW:            '[EVENT] ADD_NEW',
   EVENT_CLEAR_ACTIVE_EVENT: '[EVENT] CLEAR_ACTIVE_EVENT',

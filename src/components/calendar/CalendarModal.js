@@ -10,7 +10,7 @@ import {
 
 import {
   uiCloseModal,
-  eventAddNew,
+  eventStartAddNew,
   eventClearActiveEvent,
   eventUpdated
 } from '~actions';
@@ -107,14 +107,7 @@ export const CalendarModal = () => {
     if(formValues.id) {
       dispatch(eventUpdated(formValues));
     } else {
-      dispatch(eventAddNew({
-        id: new Date().getTime(),
-        ...formValues,
-        user: {
-          _id: '123',
-          name: 'Jolabert'
-        }
-      }));
+      dispatch(eventStartAddNew(formValues));
     }
 
     setTitleValid(true);

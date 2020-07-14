@@ -1,6 +1,30 @@
-import types from '~types';
+import Swal from 'sweetalert2';
 
-export const eventAddNew = event => ({
+import types from '~types';
+import { fetchWithToken } from '~helpers/fetch';
+
+export const eventStartAddNew = event => {
+  return async (dispatch, getState) => {
+    try {
+      const resp = await fetchWithToken('events', event, 'POST');
+      const body = await resp.json();
+
+      if(body.ok) {
+        const { uid, name } = getState().auth;
+        dispatch(eventAddNew({ ...body.eventSave, user: { _id: uid, name } }));
+      } else {
+        let msg = body.error.message ? body.error.message : body.error.reduce((acc, curr) => {
+          return `${acc} ${curr.msg}`;
+        },'');
+        Swal.fire('Error', msg, 'error');
+      }
+    } catch(error) {
+        Swal.fire('Error', error, 'error');
+    }
+  }
+}
+
+const eventAddNew = event => ({
   type: types.EVENT_ADD_NEW,
   payload: event
 });
