@@ -4,7 +4,11 @@ import Swal from 'sweetalert2';
 
 import '@testing-library/jest-dom';
 
-import { startLogin } from '~actions';
+import {
+  startLogin,
+  startRegister
+} from '~actions';
+import * as fetchModule from '~helpers/fetch';
 import types from '~types';
 
 jest.mock('sweetalert2', () => ({
@@ -88,6 +92,35 @@ describe('Test auth actions', () => {
     expect(Swal.fire).toHaveBeenCalled();
     expect(Swal.fire).toHaveBeenCalledTimes(1);
     expect(Swal.fire).toHaveBeenCalledWith('Error', 'Email is required Password is required and must have a minimum of 6 characters', 'error');
+  });
+
+  test('Should be an correctly register', async () => {
+    const [uid, name, token] = ['123', 'joalbert', 'ABC123'];
+    const  user = {
+      name,
+      email: 'test@testing.com',
+      password: '123456'
+    };
+
+    fetchModule.fetchWithoutToken = jest.fn(() => ({
+      json: () => ({
+        ok: true,
+        token,
+        user: { uid, name }
+      })
+    }));
+    await store.dispatch(startRegister(user.name, user.email, user.password));
+
+    const actions = store.getActions();
+
+    expect(actions[0]).toEqual({
+      type: types.AUTH_LOGIN,
+      payload: { uid, name }
+    });
+    expect(localStorage.setItem).toHaveBeenCalled();
+    expect(localStorage.setItem).toHaveBeenCalledTimes(2);
+    expect(localStorage.setItem).toHaveBeenNthCalledWith(1, 'token', token);
+    expect(localStorage.setItem).toHaveBeenCalledWith('token-init-date', expect.any(Number));
   });
 });
 
