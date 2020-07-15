@@ -15,6 +15,7 @@
 
 - [Enzyme][enzymejs]
 - [enzyme-to-json][enzyme_to_json]
+- [Custom environment variables][custom_environment_variables]
 
 [bootstrap]: https://getbootstrap.com/docs/4.5/getting-started/introduction
 [font_awesome]: https://cdnjs.com/libraries/font-awesome
@@ -31,6 +32,7 @@
 
 [enzymejs]: https://enzymejs.github.io/enzyme/
 [enzyme_to_json]: https://www.npmjs.com/package/enzyme-to-json
+[custom_environment_variables]: https://create-react-app.dev/docs/adding-custom-environment-variables/
 
 ### Backend repository
 
@@ -93,12 +95,17 @@
 │   │   ├── index.js
 │   │   └── store.js
 │   ├── styles.css
+│   ├── tests
+│   │   ├── helpers
+│   │   │   └── fetch.test.js
+│   │   └── types
+│   │       └── types.test.js
 │   └── types
 │       ├── index.js
 │       └── types.js
 └── yarn.lock
 
-12 directories, 42 files
+15 directories, 44 files
 ```
 
 ### Screenshots
