@@ -6,7 +6,8 @@ import '@testing-library/jest-dom';
 
 import {
   startLogin,
-  startRegister
+  startRegister,
+  startSchecking
 } from '~actions';
 import * as fetchModule from '~helpers/fetch';
 import types from '~types';
@@ -117,6 +118,38 @@ describe('Test auth actions', () => {
       type: types.AUTH_LOGIN,
       payload: { uid, name }
     });
+
+    expect(localStorage.setItem).toHaveBeenCalled();
+    expect(localStorage.setItem).toHaveBeenCalledTimes(2);
+    expect(localStorage.setItem).toHaveBeenNthCalledWith(1, 'token', token);
+    expect(localStorage.setItem).toHaveBeenCalledWith('token-init-date', expect.any(Number));
+  });
+
+  test('Should be a correctly startSchecking', async () => {
+    const [uid, name, token] = ['123', 'joalbert', 'ABC123'];
+    const  user = {
+      name,
+      email: 'test@testing.com',
+      password: '123456'
+    };
+
+    fetchModule.fetchWithToken = jest.fn(() => ({
+      json: () => ({
+        ok: true,
+        token,
+        user: { uid, name }
+      })
+    }));
+
+    await store.dispatch(startSchecking());
+
+    const actions = store.getActions();
+
+    expect(actions[0]).toEqual({
+      type: types.AUTH_LOGIN,
+      payload: { uid, name }
+    });
+
     expect(localStorage.setItem).toHaveBeenCalled();
     expect(localStorage.setItem).toHaveBeenCalledTimes(2);
     expect(localStorage.setItem).toHaveBeenNthCalledWith(1, 'token', token);
