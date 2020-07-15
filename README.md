@@ -13,6 +13,9 @@
 - [React Redux][react_redux]
 - [Redux devtools][redux_devtools]
 
+- [Enzyme][enzymejs]
+- [enzyme-to-json][enzyme_to_json]
+
 [bootstrap]: https://getbootstrap.com/docs/4.5/getting-started/introduction
 [font_awesome]: https://cdnjs.com/libraries/font-awesome
 [sweetalert2]: https://sweetalert2.github.io/
@@ -26,6 +29,9 @@
 [react_redux]: https://react-redux.js.org/
 [redux_devtools]: https://github.com/zalmoxisus/redux-devtools-extension#usage
 
+[enzymejs]: https://enzymejs.github.io/enzyme/
+[enzyme_to_json]: https://www.npmjs.com/package/enzyme-to-json
+
 ### Backend repository
 
 - [Calendar API][calendar_api]
@@ -34,20 +40,13 @@
 
 ### Project Structure
 
-> run `tree -I "node_modules|public"`
+> run `tree -I "node_modules|screenshots|public"`
 ```shell
 .
 ├── Dockerfile
 ├── README.md
 ├── docker-compose.yml
 ├── package.json
-├── public
-│   ├── favicon.ico
-│   ├── index.html
-│   ├── logo192.png
-│   ├── logo512.png
-│   ├── manifest.json
-│   └── robots.txt
 ├── src
 │   ├── CalendarApp.js
 │   ├── actions
@@ -72,7 +71,8 @@
 │   │       └── index.js
 │   ├── helpers
 │   │   ├── calendar-messages-es.js
-│   │   └── fetch.js
+│   │   ├── fetch.js
+│   │   └── prepare-events.js
 │   ├── hooks
 │   │   ├── index.js
 │   │   └── useForm.js
@@ -98,7 +98,7 @@
 │       └── types.js
 └── yarn.lock
 
-13 directories, 47 files
+12 directories, 42 files
 ```
 
 ### Screenshots
@@ -164,6 +164,7 @@ docker-compose run app yarn add react-router-dom react-big-calendar moment valid
 docker-compose run app yarn add react-datetime-picker react-modal sweetalert2
 docker-compose run app yarn add react-datetime-picker react-redux redux redux-thunk
 docker-compose run app yarn add link-module-alias --dev
+docker-compose run app yarn add enzyme enzyme-adapter-react-16 enzyme-to-json redux-mock-store --dev
 ```
 
 ### Start project
