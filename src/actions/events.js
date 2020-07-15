@@ -18,7 +18,7 @@ export const eventStartAddNew = event => {
         dispatch(eventAddNew({ ...prepareEvent(body.eventSave), user: { _id: uid, name } }));
       } else {
         let msg = body.error.message ? body.error.message : body.error.reduce((acc, curr) => {
-          return `${acc} ${curr.msg}`;
+          return `${acc} ${curr.msg}`.trim();
         },'');
         Swal.fire('Error', msg, 'error');
       }
@@ -53,7 +53,7 @@ export const eventStartUpdate = event => {
         dispatch(eventUpdated({ ...prepareEvent(body.updatedEvent), user: { _id: uid, name } }));
       } else {
         let msg = body.error.message ? body.error.message : body.error.reduce((acc, curr) => {
-          return `${acc} ${curr.msg}`;
+          return `${acc} ${curr.msg}`.trim();
         },'');
         Swal.fire('Error', msg, 'error');
       }
@@ -83,7 +83,7 @@ export const eventStartDelete = () => {
         dispatch(eventDeleted());
       } else {
         const msg = body.error.message ? body.error.message : body.error.reduce((acc, curr) => {
-          return `${acc} ${curr.msg}`;
+          return `${acc} ${curr.msg}`.trim();
         },'');
         Swal.fire('Error', msg, 'error');
       }
@@ -108,7 +108,7 @@ export const eventStartLoading = () => {
         dispatch(eventLoaded(prepareEvents(body.events)));
       } else {
         let msg = body.error.message ? body.error.message : body.error.reduce((acc, curr) => {
-          return `${acc} ${curr.msg}`;
+          return `${acc} ${curr.msg}`.trim();
         },'');
         Swal.fire('Error', msg, 'error');
       }

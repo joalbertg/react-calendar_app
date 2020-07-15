@@ -23,7 +23,7 @@ export const startLogin = (email, password) => {
       dispatch(login(body.user));
     } else {
       let msg = body.error.message ? body.error.message : body.error.reduce((acc, curr) => {
-        return `${acc} ${curr.msg}`;
+        return `${acc} ${curr.msg}`.trim();
       },'');
       Swal.fire('Error', msg, 'error');
     }
@@ -42,7 +42,7 @@ export const startRegister = (name, email, password) => {
       dispatch(login(body.user));
     } else {
       let msg = body.error.message ? body.error.message : body.error.reduce((acc, curr) => {
-        return `${acc} ${curr.msg}`;
+        return `${acc} ${curr.msg}`.trim();
       },'');
       Swal.fire('Error', msg, 'error');
     }
