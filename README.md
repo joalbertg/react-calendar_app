@@ -96,8 +96,30 @@
 │   │   └── store.js
 │   ├── styles.css
 │   ├── tests
+│   │   ├── actions
+│   │   │   └── auth.test.js
+│   │   ├── components
+│   │   │   ├── auth
+│   │   │   │   ├── LoginScreen.test.js
+│   │   │   │   └── __snapshots__
+│   │   │   │       └── LoginScreen.test.js.snap
+│   │   │   ├── calendar
+│   │   │   │   ├── CalendarModal.test.js
+│   │   │   │   ├── CalendarScreen.test.js
+│   │   │   │   └── __snapshots__
+│   │   │   │       └── CalendarScreen.test.js.snap
+│   │   │   └── ui
+│   │   │       ├── DeleteEventFab.test.js
+│   │   │       └── __snapshots__
+│   │   │           └── DeleteEventFab.test.js.snap
 │   │   ├── helpers
 │   │   │   └── fetch.test.js
+│   │   ├── reducers
+│   │   │   └── uiReducer.test.js
+│   │   ├── routers
+│   │   │   ├── AppRouter.test.js
+│   │   │   └── __snapshots__
+│   │   │       └── AppRouter.test.js.snap
 │   │   └── types
 │   │       └── types.test.js
 │   └── types
@@ -105,7 +127,7 @@
 │       └── types.js
 └── yarn.lock
 
-15 directories, 44 files
+26 directories, 55 files
 ```
 
 ### Screenshots

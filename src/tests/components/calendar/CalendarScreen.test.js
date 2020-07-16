@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { act } from '@testing-library/react';
-import Swal from 'sweetalert2';
 
 import '@testing-library/jest-dom';
 

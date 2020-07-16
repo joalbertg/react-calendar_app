@@ -125,6 +125,8 @@ export const CalendarModal = () => {
       onRequestClose={closeModal}
       style={customStyles}
       closeTimeoutMS={200}
+      // se agrega por el test de CalendarModal
+      ariaHideApp={ !process.env.NODE_ENV === 'test' }
     >
       <h1> { activeEvent ? 'Edit Event' : 'New event' } </h1>
       <hr />
