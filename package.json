@@ -21,7 +21,7 @@
     "serve": "^11.3.2",
     "sweetalert2": "^9.15.3",
     "typescript": ">=3.7.0-dev",
-    "validator": "^13.1.1",
+    "validator": "^13.7.0",
     "websocket-extensions": "^0.1.4"
   },
   "scripts": {
